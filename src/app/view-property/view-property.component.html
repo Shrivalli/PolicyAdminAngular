@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+    <h2>List of Properties</h2>
+    <div class="table-wrapper"> 
+        
+<table border="1" class="fl-table">
+    <tbody>
+        
+        <tr>
+            <th >PropertyId</th>
+            <th>Building Age</th>
+            <th>Area</th>
+            <th>Storeys</th>
+            <th>Cost</th>
+            <th>Useful Life</th> 
+            <th>Salavage Value</th>
+            <th>Propertytype</th>
+            <th>Property Value</th>
+            <th>ConsumerId</th>
+        </tr>
+    
+            <tr *ngFor="let user of allUser">
+        <td>{{user.propertyId}}</td>
+        <td>{{user.buildingAge}}</td>
+        <td>{{user.buildingsqft}}</td>
+        <td>{{user.buildingStoreys}}</td>
+        <td>{{user.costOfProperty}}</td>
+        <td>{{user.useFulLifeOfTheAsset}}</td>
+        <td>{{user.salvageValue}}</td>
+        <td>{{user.propertyType}}</td>
+        <td>{{user.propertyValue}}</td>
+        <td>{{user.consumerId}}</td>
+       
+        
+    
+    
+    </tr>
+    </tbody>
+    </table>
+    </div>
+ 

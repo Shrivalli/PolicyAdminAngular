@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+ <div class = "container-fluid">
+
+    <div class = "row">
+
+        <div class = "col-lg-12">
+
+            <table border="1" #dataTable class="display" class="le">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Consumer Policy Id</th>
+
+                        <th>Policy status</th>
+
+                        <th>Payment Status</th>
+
+                        <th>Quote Value</th>
+
+                        <th>Consumer Id</th>
+
+                        <th>Property Id</th>
+
+                        <th>Policy Master ID</th>
+
+                    </tr>
+
+                </thead>  
+                <tbody>
+
+                    <tr class="le" *ngFor="let policy of allpolicy">
+  
+                          <td>{{policy.consumerPolicyID}}</td>
+  
+                          <td>{{policy.policyStatus}}</td>
+  
+                          <td>{{policy.paymentStatus}}</td>
+  
+                          <td>{{policy.quote}}</td>
+
+                          <td>{{policy.consumerID}}</td>
+
+                          <td>{{policy.propertyID}}</td>
+
+                          <td>{{policy.policyID}}</td>
+  
+                      </tr>
+  
+                  </tbody>
+  
+              </table>
+  
+          </div>
+  
+      </div>
+  
+  </div>       

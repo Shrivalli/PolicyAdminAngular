@@ -1,0 +1,50 @@
+<html><h2>Issue Policy</h2>
+<div>
+    <!-- issuePolicyForm.form.valid &&  -->
+<form #issuePolicyForm="ngForm" (ngSubmit)="issuePolicy(policyid.value, paymentdetail.value, issuePolicyForm)">
+     <div class="form-group">
+        <label for="policyid"> Enter Policy ID:</label>
+        <input class="form-control" type="number" ngModel placeholder="Enter Policy ID here" name="PolicyId" id="policyid" #policyid="ngModel" [ngClass]="{ 'is-invalid': issuePolicyForm.submitted && policyid.invalid }" required />
+        <div class="invalid-feedback" *ngIf="issuePolicyForm.submitted && policyid.invalid">
+            <p *ngIf="policyid.errors?.['required']">Policy ID is required</p>
+        </div>
+    </div>
+    &nbsp;
+<div>
+    <b>Is Payment done?</b>
+    <br>
+    <input type="radio" id="paymentdetail_True" name="paymentdetail" ngModel #paymentdetail="ngModel" [value]="true"  required/>
+    <label for="paymentTrue">Yes</label>
+    <input type="radio" id="paymentdetail_False" name="paymentdetail" ngModel #paymentdetail="ngModel" [value]="false" required>
+    <label for="paymentFalse">No</label>
+    <div class="error"  *ngIf="paymentdetail.touched==true && paymentdetail.invalid==true">Payment field is required.</div>
+    <br>   
+</div>
+&nbsp;
+<div class="form-group">
+    <button class="btn btn-md btn-success" type="submit" >Issue Policy</button>
+    <!-- [disabled]="issuePolicyForm.form.invalid" -->
+    &nbsp;
+    <button class="btn btn-md btn-danger" type="reset"> Reset</button>
+</div>
+</form>
+</div>
+
+<div>
+<div class="col-md-6">
+    <h3>Policy Status : </h3> 
+    <div class="alert alert-success" *ngIf="checkStatus(policyid.value); else policy_not_created" #policy_created>
+        <h3>
+            {{ policyStatus }}
+        </h3>
+    </div>
+    <ng-template #policy_not_created>
+        <div class="alert alert-danger">
+            <h3>
+                {{ policyStatus }}
+            </h3>
+        </div>
+    </ng-template>
+</div>
+</div>
+</html>

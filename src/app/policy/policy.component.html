@@ -1,0 +1,110 @@
+<app-menu></app-menu>
+
+<!-- <div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}"> -->
+<div style="background: gray;">
+    <div style="padding: 5% 0% 2% 28%;">
+    <button type="button" class="btn btn-success" (click)="post_api_create_policy()">Create Policy</button>
+    &nbsp;&nbsp;
+    <button type="button" class="btn btn-warning" (click)="put_api_update_policy()">Issue Policy</button>
+    &nbsp;&nbsp;
+    <button type="button" class="btn btn-primary" (click)="get_api_consumerpolicies()">All Policy Details</button>
+    &nbsp;&nbsp;
+    </div>
+
+<div *ngIf="flag_get_consumerpolicies" style="padding: 0% 10% 0% 10%;">
+    <div class="class1"  style="padding: 2% 10% 2% 10%;" >
+    <h2>List of Policies</h2>
+    <table border="1" align="center" class="fl-table">
+    <thead>
+        <tr>
+            <th>Consumer Policy Id</th>&nbsp;&nbsp;&nbsp;
+            <th>Policy status</th>&nbsp;&nbsp;&nbsp;
+            <th>Payment Status</th>&nbsp;&nbsp;&nbsp;
+            <th>Quote Value</th>&nbsp;&nbsp;&nbsp;
+            <th>Consumer Id</th>&nbsp;&nbsp;&nbsp;
+            <th>Property Id</th>&nbsp;&nbsp;&nbsp;
+            <th>Policy Master ID</th>&nbsp;&nbsp;&nbsp;
+        </tr>
+    </thead>
+    &nbsp;
+    <tbody>
+         <tr *ngFor="let policy of consumerpolicies" style="text-align: center;">
+  
+            <td>{{policy.consumerPolicyID}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.policyStatus}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.paymentStatus}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.quote}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.consumerID}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.propertyID}}</td>&nbsp;&nbsp;&nbsp;
+
+            <td>{{policy.policyID}}</td>&nbsp;&nbsp;&nbsp;
+            
+    </tbody>
+</table>
+    </div>
+    </div>
+
+<div  *ngIf="flag_post" style="padding: 2% 30% 0% 30%;">
+    <div class="con" style="padding: 2% 10% 2% 10%;" >
+        <div class="signup-form">
+        <form #policyForm="ngForm" (ngSubmit)="post_api(consumerId,propertyId,policyForm)">
+            <div class="form-group">
+                <label for="c_id">Consumer Id</label>
+                <input type="number" class="form-control" id="c_id" name="c_id" placeholder="Enter Consumer ID" [(ngModel)]="consumerId" required/>
+            </div>
+            <div class="form-group">
+                <label for="p_id">Property Id</label>
+                <input type="number" class="form-control" id="p_id" name="p_id" placeholder="Enter Property ID" [(ngModel)]="propertyId" required/>
+            </div>
+            <input type="submit" class="btn btn-success" [disabled]="!policyForm.valid" value="Submit">
+            &nbsp;
+            <button class="btn btn-md btn-danger" type="reset">Reset</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<div *ngIf="flag_put" style="padding: 2% 30% 0% 30%;">
+    <div class="con" style="padding: 2% 10% 2% 10%;" >
+        <form #policyIssueForm="ngForm" (ngSubmit)="put_api(policyId,paymentdetails,policyIssueForm)" >
+        <div class="form-group">
+            <label for="p_id">Policy Id</label>
+            <input type="number" class="form-control" id="p_id" name="p_id" placeholder="Policy ID" [(ngModel)]="policyId" required/>
+        </div>
+
+            <div class="form-group">
+            <b>Is Payment done?</b>
+            <br>
+            <input type="radio" id="paymentdetail_True" name="paymentdetails" [(ngModel)]="paymentdetails" [value]="true"  required/>
+            <label  for="payment_True">Yes</label>
+            <input  type="radio" id="paymentdetail_False" name="paymentdetails" [(ngModel)]="paymentdetails" [value]="false" required/>
+            <label  for="payment_False">No</label>
+            <div *ngIf="paymentdetails?.['required']">Payment details is required</div>
+            <br>   
+        </div>
+        <!-- <button type="button" class="btn btn-success" [disabled]="!policyIssueForm.valid" value="Submit">Issue</button> -->
+        <input type="submit" class="btn btn-success" [disabled]="!policyIssueForm.valid" value="Issue">
+        &nbsp;
+        <button type="button" class="btn btn-md btn-danger" type="reset">Reset</button>
+    </form>
+    </div>
+</div>
+
+
+<div *ngIf="flag_insert_msg">
+    <div style="padding: 2% 30% 0% 30%;">
+        <div class="alert" style="background-color: cornflowerblue;" *ngIf="create_msg">{{create_msg}}</div>
+    </div>
+    </div>
+    
+<div *ngIf="flag_update_msg">
+    <div style="padding: 2% 30% 0% 30%;">
+        <div class="alert" style="background-color: cornflowerblue;" *ngIf="update_msg">{{update_msg}}</div>
+    </div>
+</div>
+</div>

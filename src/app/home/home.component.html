@@ -1,0 +1,64 @@
+<!-- <<div style="padding: 0% 0% 0% 10%;">
+    <br>
+    <div *ngIf="isUserAuthenticated()">
+        <H3 class="name">Welcome to Agent Policy Portal {{agentName}}!!!</H3>
+        <button class="btn-primary" routerLinkActive="active-link" routerLink="/menu" id="link1">Go To Menu</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn-primary" routerLinkActive="active-link" routerLink="/Login" id="link1">Logout</button>
+    </div>
+    </div>
+    <div style="padding: 0% 25% 0% 25%;">
+    <div *ngIf="invalidLogin">
+    
+    <div class="alert alert-danger" id="link2">
+        Invalid username or password<br>Please Login again</div>
+    <button class="btn-primary" routerLinkActive="active-link" routerLink="/Login" id="link1">Login</button>
+    </div>
+   
+</div> -->
+
+<app-menu></app-menu>
+
+<h1 style="text-align: center;">POLICY MANAGEMENT SYSTEM</h1>
+<!-- <b><p class="p1" style="text-align:center;">POLICY MANAGEMENT SYSTEM</p></b> -->
+<div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}">
+<router-outlet></router-outlet><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+<!-- <html>   
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Policy Administration System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+  </head>
+  <body>
+     
+    <div class="perspective-text">
+      <div class="perspective-line">
+        <p></p>
+        <p>Policy</p>
+      </div>
+      <div class="perspective-line">
+        <p>Policy</p>
+        <p>Administration</p>
+      </div>
+      <div class="perspective-line">
+        <p>Administration</p>
+        <p>System</p>
+      </div>
+      <div class="perspective-line">
+        <p>System</p>
+        <p>....</p>
+      </div>
+      <div class="perspective-line">
+        <p>....</p>
+        <p></p>
+      </div>
+    </div>
+
+</body>
+
+</html> -->

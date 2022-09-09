@@ -1,0 +1,43 @@
+ @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+body {
+	padding:base-spacing-unit;
+	font-family:'Source Sans Pro', sans-serif;
+	margin:0;
+}
+
+
+.table {
+	width:100%;
+	border:1px solid color-form-highlight;
+    
+}
+
+th {
+
+	width:100%;
+	background:#000;
+	padding:(half-spacing-unit * 1) 0;
+    text-transform:uppercase;
+    color:greenyellow;
+}
+
+
+td{
+	
+	width:100%;
+	padding:(half-spacing-unit * 1) 0;
+    background:white;
+	
+	
+		
+	}
+
+	.btn{
+		background-color: #f44336; 
+	}
+
+
+
+
+

@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+
+<h2>List of Businesses</h2>
+<div class="table-wrapper"> 
+    
+<table border="1" class="fl-table">
+    <tbody>
+        <tr >
+        <th class="le">BId</th>
+        <th>BusinessName</th>
+        <th>BusinessType</th>
+        <th>TotalEmployees</th>
+        <th>ConsumerId</th>
+        
+        </tr>
+
+        <tr *ngFor="let user of allUser">
+    <td class="le">{{user.businessId}}</td>
+    <td>{{user.businessName}}</td>
+    <td>{{user.businessType}}</td>
+    <td>{{user.totalEmployees}}</td>
+    <td>{{user.consumerId}}</td>
+    
+</tr>
+</tbody>
+</table>
+</div>

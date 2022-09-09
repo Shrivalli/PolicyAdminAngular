@@ -1,0 +1,56 @@
+
+    <app-menu></app-menu>
+    <!-- <ul>
+				 -->
+        <!-- <li class="btn btn-primary"><a class=" text-light text-decoration-none" routerLink='/Login' routerLinkActive="active">Logout</a></li>
+        
+    <li class="btn btn-primary"><a class=" text-light text-decoration-none" routerLink="/menu" routerLinkActive="active">Home</a></li>
+     <li class="btn btn-primary"><a class=" text-light text-decoration-none" routerLink="/menu" routerLinkActive="active">Menu</a></li> -->
+
+        <!-- </ul> -->
+     <html>
+    <h2>List of Consumers</h2>
+    <div class="table-wrapper"> 
+        
+<table border="1" class="fl-table">
+    <tbody>
+        <tr>
+        <th >CId</th>
+        <th>Name</th>
+        <th>Pancard</th>
+        <th>Date of Birth</th>
+        <th>Email</th>
+        <!-- <th>BusinessType</th>  -->
+        <th>Number Of employees</th>
+        <th>Annual Turnover</th>
+        <th>Capital Invested</th>
+         <th>Business Value</th>
+        <th>Agent Id</th>
+        </tr>
+
+        <tr *ngFor="let user of allUser">
+    <td >{{user.consumerId}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.pancard}}</td>
+    <td>{{user.dob|date}}</td>
+    <td>{{user.email}}</td>
+    <!-- <td>{{user.businessOverview}}</td> -->
+    <td>{{user.no_of_employees}}</td>
+    <td>{{user.annual_turnover}}</td>
+    <td>{{user.capitalInvested}}</td>
+    <td>{{user.businessValue}}</td>
+    <td>{{user.agentId}}</td>
+ 
+
+
+</tr>
+</tbody>
+</table>
+</div> 
+</html>  
+<!-- 
+<div id="center">
+    
+    <button class="btn btn-primary"><a class=" text-light text-decoration-none" routerLink="/menu" routerLinkActive="active">Menu</a></button>
+
+</div> -->

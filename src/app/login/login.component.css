@@ -1,0 +1,16 @@
+.con{
+    background:linear-gradient(135deg,turquoise,teal);
+      height: 16cm;
+    width:15cm;
+    
+    transform: translate(-30%, -0%);
+    border: 3px solid green;
+    padding: 10px;
+    
+    
+}
+
+small {
+    color: red;
+}
+

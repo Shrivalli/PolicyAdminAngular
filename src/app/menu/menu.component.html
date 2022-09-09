@@ -1,0 +1,48 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+<body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn">Menu<i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+      <ul>
+    <li><a routerLinkActive="active-link" routerLink="/ViewAllConsumer">View All Consumer</a>
+    </li>
+    <li><a routerLinkActive="active-link" routerLink="/createConsumer">Create Consumer</a>
+   </li>
+      <!-- <li> <a routerLinkActive="active-link" routerLink="/EditConsumer">Edit Consumer</a>
+      </li> -->
+    <li><a routerLinkActive="active-link" routerLink="/CreateBusiness">Create Business</a>
+    </li>
+    <li><a routerLinkActive="active-link" routerLink="/ViewBusiness">View All Business</a>
+   </li>
+   <li>
+    <a routerLinkActive="active-link" routerLink="/CreateProperty">Create Property</a></li>
+    
+    <li><a routerLinkActive="active-link" routerLink="/ViewProperty">View Property</a>
+    </li>
+    
+    <li>
+    <a routerLinkActive="active-link" routerLink="/Policy">Policy</a>
+   </li>
+   <li>
+    <a routerLinkActive="active-link" routerLink="/home">Home</a>
+   </li>
+   </ul></div>
+    <div style="padding: 0% 0% 0% 10%;">
+        <br>
+        <div *ngIf="isUserAuthenticated()">
+            <h6 class="name">Welcome To Agent Portal {{agentName}}!!!</h6>
+            <button class="btn-primary" routerLinkActive="active-link" routerLink="/Login" id="link1">Logout</button>
+        </div>
+        </div>
+ 
+
+
+<!-- <div class="panel panel-default" [ngStyle]="{'background-image': getUrl()}">
+</div> -->
+
+
+</body>
